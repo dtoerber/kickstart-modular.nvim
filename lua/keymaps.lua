@@ -90,4 +90,7 @@ vim.keymap.set('n', 'x', '"_x', { desc = 'Delete character.' })
 -- Lazygit
 vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { desc = 'Open LazyGit' })
 
+-- Quit without saving
+vim.keymap.set('n', 'Q', '<Cmd>q!<CR>', { desc = 'Close without saving.' })
+
 -- vim: ts=2 sts=2 sw=2 et
