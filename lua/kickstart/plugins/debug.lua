@@ -23,6 +23,7 @@ return {
 
     -- Add your own debuggers here
     'leoluz/nvim-dap-go',
+    'nicholasmata/nvim-dap-cs',
   },
   config = function()
     local dap = require 'dap'
@@ -31,6 +32,7 @@ return {
     require('mason-nvim-dap').setup {
       -- Makes a best effort to setup the various debuggers with
       -- reasonable debug configurations
+      automatic_installation = true,
       automatic_setup = true,
 
       -- You can provide additional configuration to the handlers,
@@ -42,6 +44,7 @@ return {
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
         'delve',
+        'netcoredbg',
       },
     }
 
@@ -58,11 +61,23 @@ return {
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|
     dapui.setup {
+      config = {},
+      mappings = {},
+      layouts = {},
+      render = {
+        indent = 2,
+      },
+      floating = {},
+      element_mappings = {},
+      expand_lines = true,
+      force_buffers = true,
       -- Set icons to characters that are more likely to work in every terminal.
       --    Feel free to remove or use ones that you like more! :)
       --    Don't feel like these are good choices.
       icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
       controls = {
+        enabled = true,
+        element = '',
         icons = {
           pause = '⏸',
           play = '▶',
