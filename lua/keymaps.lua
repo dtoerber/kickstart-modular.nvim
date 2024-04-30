@@ -25,6 +25,9 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 -- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 -- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
+-- Splits
+vim.keymap.set('n', '<leader>|', '<Cmd>vsplit<CR>', { desc = 'Vertical split', silent = true })
+vim.keymap.set('n', '<leader>_', '<Cmd>split<CR>', { desc = 'Horizontal split', silent = true })
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --
@@ -47,5 +50,44 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+-- Move Line(s)
+vim.keymap.set('n', '<a-k>', ':m .-2<CR>==', { desc = 'Move Line up', silent = true })
+vim.keymap.set('n', '<a-j>', ':m .+1<CR>==', { desc = 'Move Line down', silent = true })
+
+vim.keymap.set('v', '<a-k>', ":m '<-2<CR>gv=gv", { desc = 'Move Line(s) up', silent = true })
+vim.keymap.set('v', '<a-j>', ":m '>+1<CR>gv=gv", { desc = 'Move Line(s) down', silent = true })
+
+vim.keymap.set('i', '<a-k>', '<Esc>:m .-2<CR>==gi', { desc = 'Move Line(s) up', silent = true })
+vim.keymap.set('i', '<a-j>', '<Esc>:m .+1<CR>==gi', { desc = 'Move Line(s) down', silent = true })
+
+-- Join lines
+vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Join Lines' })
+
+-- Code Folding
+vim.opt.foldmethod = 'indent'
+vim.opt.foldlevel = 20
+vim.keymap.set('n', '<leader>a', 'za', { desc = 'Fold Toggle' })
+vim.keymap.set('n', '<leader>k', 'za', { desc = 'Fold Toggle' })
+
+-- Save
+vim.keymap.set('n', '<leader>w', '<Cmd>w<CR>', { desc = 'Save file.' })
+
+-- Page Up/Down
+vim.keymap.set('n', '<C-p>', '<C-u>zz', { desc = 'Half Page Up.' })
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Half Page Down.' })
+
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Page Up.' })
+vim.keymap.set('n', '<C-n>', '<C-d>zz', { desc = 'Page Down.' })
+
+-- Keep search in the middle of the screen.
+vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Page Up.' })
+vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Page Up.' })
+
+-- Delete char without copying it to clipboard
+vim.keymap.set('n', 'x', '"_x', { desc = 'Delete character.' })
+
+-- Lazygit
+vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { desc = 'Open LazyGit' })
 
 -- vim: ts=2 sts=2 sw=2 et
