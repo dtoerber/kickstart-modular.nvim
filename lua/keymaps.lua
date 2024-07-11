@@ -28,6 +28,18 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 -- Splits
 vim.keymap.set('n', '<leader>|', '<Cmd>vsplit<CR>', { desc = 'Vertical split', silent = true })
 vim.keymap.set('n', '<leader>_', '<Cmd>split<CR>', { desc = 'Horizontal split', silent = true })
+
+-- Resize Splits
+vim.keymap.set('n', '<a-left>', '<Cmd>vertical resize +3<CR>', { desc = 'Increast vertical split size', silent = true })
+vim.keymap.set('v', '<a-left>', '<Cmd>vertical resize +3<CR>', { desc = 'Increast vertical split size', silent = true })
+vim.keymap.set('n', '<a-right>', '<Cmd>vertical resize -3<CR>', { desc = 'Decrease vertical split size', silent = true })
+vim.keymap.set('v', '<a-right>', '<Cmd>vertical resize -3<CR>', { desc = 'Decrease vertical split size', silent = true })
+
+vim.keymap.set('n', '<a-up>', '<Cmd>resize +3<CR>', { desc = 'Increast split size', silent = true })
+vim.keymap.set('v', '<a-up>', '<Cmd>resize +3<CR>', { desc = 'Increast split size', silent = true })
+vim.keymap.set('n', '<a-down>', '<Cmd>resize -3<CR>', { desc = 'Decrease split size', silent = true })
+vim.keymap.set('v', '<a-down>', '<Cmd>resize -3<CR>', { desc = 'Decrease split size', silent = true })
+
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --
@@ -86,6 +98,9 @@ vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Page Up.' })
 
 -- Delete char without copying it to clipboard
 vim.keymap.set('n', 'x', '"_x', { desc = 'Delete character.' })
+
+-- Toggle Neotree
+vim.keymap.set('n', '\\', '<Cmd>Neotree reveal<CR>', { desc = 'Neotree Reveal' })
 
 -- Lazygit
 vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { desc = 'Open LazyGit' })
