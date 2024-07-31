@@ -30,15 +30,15 @@ vim.keymap.set('n', '<leader>|', '<Cmd>vsplit<CR>', { desc = 'Vertical split', s
 vim.keymap.set('n', '<leader>_', '<Cmd>split<CR>', { desc = 'Horizontal split', silent = true })
 
 -- Resize Splits
-vim.keymap.set('n', '<a-left>', '<Cmd>vertical resize +3<CR>', { desc = 'Increast vertical split size', silent = true })
-vim.keymap.set('v', '<a-left>', '<Cmd>vertical resize +3<CR>', { desc = 'Increast vertical split size', silent = true })
-vim.keymap.set('n', '<a-right>', '<Cmd>vertical resize -3<CR>', { desc = 'Decrease vertical split size', silent = true })
-vim.keymap.set('v', '<a-right>', '<Cmd>vertical resize -3<CR>', { desc = 'Decrease vertical split size', silent = true })
+vim.keymap.set('n', '<a-9>', '<Cmd>vertical resize +3<CR>', { desc = 'Increast vertical split size', silent = true })
+vim.keymap.set('v', '<a-9>', '<Cmd>vertical resize +3<CR>', { desc = 'Increast vertical split size', silent = true })
+vim.keymap.set('n', '<a-0>', '<Cmd>vertical resize -3<CR>', { desc = 'Decrease vertical split size', silent = true })
+vim.keymap.set('v', '<a-0>', '<Cmd>vertical resize -3<CR>', { desc = 'Decrease vertical split size', silent = true })
 
-vim.keymap.set('n', '<a-up>', '<Cmd>resize +3<CR>', { desc = 'Increast split size', silent = true })
-vim.keymap.set('v', '<a-up>', '<Cmd>resize +3<CR>', { desc = 'Increast split size', silent = true })
-vim.keymap.set('n', '<a-down>', '<Cmd>resize -3<CR>', { desc = 'Decrease split size', silent = true })
-vim.keymap.set('v', '<a-down>', '<Cmd>resize -3<CR>', { desc = 'Decrease split size', silent = true })
+vim.keymap.set('n', '<a-(>', '<Cmd>resize +3<CR>', { desc = 'Increast split size', silent = true })
+vim.keymap.set('v', '<a-(>', '<Cmd>resize +3<CR>', { desc = 'Increast split size', silent = true })
+vim.keymap.set('n', '<a-)>', '<Cmd>resize -3<CR>', { desc = 'Decrease split size', silent = true })
+vim.keymap.set('v', '<a-)>', '<Cmd>resize -3<CR>', { desc = 'Decrease split size', silent = true })
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
