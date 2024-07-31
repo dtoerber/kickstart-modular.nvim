@@ -6,6 +6,13 @@ return {
     options = {
       mode = 'tabs',
       separator_style = 'slant',
+      offsets = {
+        {
+          filetype = 'neo-tree',
+          text = 'File Explorer',
+          text_align = 'center',
+        },
+      },
     },
   },
 }
