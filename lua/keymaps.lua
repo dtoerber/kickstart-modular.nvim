@@ -63,6 +63,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Change Buffer
+vim.keymap.set('n', '<leader>n', ':bnext<CR>', { desc = 'Switch to [N]ext buffer', silent = true })
+vim.keymap.set('n', '<leader>p', ':bprevious<CR>', { desc = 'Switch to [P]revious buffer', silent = true })
+
+-- Close current current buffer
+vim.keymap.set('n', 'X', '<Cmd>:bd | :bnext<CR>', { desc = 'Close current buffer.' })
+
 -- Move Line(s)
 vim.keymap.set('n', '<a-k>', ':m .-2<CR>==', { desc = 'Move Line up', silent = true })
 vim.keymap.set('n', '<a-j>', ':m .+1<CR>==', { desc = 'Move Line down', silent = true })
@@ -104,9 +111,6 @@ vim.keymap.set('n', '\\', '<Cmd>Neotree reveal<CR>', { desc = 'Neotree Reveal' }
 
 -- Lazygit
 vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { desc = 'Open LazyGit' })
-
--- Close current tab
-vim.keymap.set('n', 'X', '<Cmd>:exit<CR>', { desc = 'Close current tab.' })
 
 -- Quit without saving
 vim.keymap.set('n', 'Q', '<Cmd>q!<CR>', { desc = 'Close without saving.' })
