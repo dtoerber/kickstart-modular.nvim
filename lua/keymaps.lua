@@ -73,6 +73,10 @@ vim.keymap.set('n', 'X', '<Cmd>:bd | :bnext<CR>', { desc = 'Close current buffer
 -- Pick Buffer
 vim.keymap.set('n', '<leader>bp', ':BufferLinePick<CR>', { desc = 'Pick a buffer.' })
 
+-- Cycle Buffer
+vim.keymap.set('n', '<a-]>', ':BufferLineCycleNext<CR>', { desc = 'Next buffer.' })
+vim.keymap.set('n', '<a-[>', ':BufferLineCyclePrev<CR>', { desc = 'Previous buffer.' })
+
 -- Move Line(s)
 vim.keymap.set('n', '<a-k>', ':m .-2<CR>==', { desc = 'Move Line up', silent = true })
 vim.keymap.set('n', '<a-j>', ':m .+1<CR>==', { desc = 'Move Line down', silent = true })
